@@ -1,0 +1,129 @@
+Inheritance:
+Inheritance follows a (is-has) combination;
+Example:
+Computer is an Abstract concept as it has hardware, cpu, ram, os;
+Laptop inherit features from the concept of a computer, so it means laptop (is) a computer
+
+Whenever you create an obj of child class, constructor of parent class is called by default
+This is because every constructor has hidden keyword super(), which loads object of super class
+
+
+Java does not support Multiple Inheritance
+But Interface is a concept by which we can implement methods from parent class into subclass;
+
+But definitely Java Supports multiple level inheritance
+Code Example:
+------------------------------------------------------------------------------
+(Super/Base class)
+class Calc{
+    add();
+    sub();
+}
+
+extends keyword is used to inherit attributes and methods from base class
+
+(Sub/Derived class)
+class AdvCalc extends Calc{
+    multiply();
+    divide();
+}
+
+(Sub/Derived class) from a (Derived class)
+class VeryAdvCalc extends AdvCalc{
+    pow();
+    sin();
+    cos();
+}
+--------------------------------------------------------------------------------
+
+Code Example for Interface:
+
+interface Vehicle{
+    drive();
+}
+class Car implements Vehicle{
+
+}
+
+
+------------------------------------------------------------------------------------
+
+
+Method OverLoading:
+this is a concept where developer can create method with same name but different type of output or parameters
+
+--------------------------------------------------------------------------------------
+Code Example:
+
+class Methods{
+    void show();
+    void show(int n);
+    String show();
+}
+
+------------------------------------------------------------------------------------------
+
+Method Overriding:
+this is the concept where a (subclass/derived class) overrides(restructure the logic of method) from a (parent/base class)
+--------------------------------------------------------------------------------------------
+Code Example:
+
+@Override annotation lets compiler know that this is an overridden method
+
+class A {
+    void show(){
+        System.out.println("In A show");
+    };
+}
+class B extends A{
+    @Override
+    void show(){
+        System.out.println("In B show");
+    }
+}
+------------------------------------------------------------------------------------
+
+Polymorphism:
+Poly means many and morphism means behavior
+
+One object have many behaviors depending upon creation;
+
+there are two stages where process of which behavior needs to be selected
+
+1. Compile Time
+2. Run Time
+
+Overloading is a part of compile time
+Overriding is a part of runtime
+
+The methods which are decided on runtime is referred as Dynamic method dispatch
+
+-----------------------------------------------------------------------------------------
+
+Abstraction:
+When the concept is not needed to be implemented in base class as children have different behavior
+Instead passed the responsibility to children whatever way they way to implement that functionality
+------------------------------------------------------------------------------------------------------
+
+abstract class Parent{
+    abstract void earn();
+    void love(){
+        System.out.println("Love everyone");
+    }
+}
+
+class Son extends Parent{
+    @Override
+    void earn(){
+        System.out.println("Earning by Business");
+    }
+}
+
+class Daughter extends Parent{
+    @Override
+    void earn(){
+        System.out.println("Earning by Job");
+    }
+}
+
+---------------------------------------------------------------------------------------------
