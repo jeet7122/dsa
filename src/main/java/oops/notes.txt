@@ -35,14 +35,37 @@ class VeryAdvCalc extends AdvCalc{
     cos();
 }
 --------------------------------------------------------------------------------
-
+Variables in interfaces are by default final and static
 Code Example for Interface:
+Here in interface Vehicle we have just declared the method
+But in class Car we have implemented method drive
+We can not create objects of interface, so we have to implement methods into a class
+
+The use is the interface is to avoid decoupling
+we can implement more than one interface on a class;
+we can extend an interface to an interface;
 
 interface Vehicle{
-    drive();
+    void drive();
 }
-class Car implements Vehicle{
 
+interface Navigation{
+    void navigate();
+}
+
+interface Features extends Navigation{
+    void playMusic();
+}
+class Car implements Vehicle, Features{
+    @Override
+    void drive(){
+        System.out.println("Driving....")
+    }
+
+    @Override
+    void playMusic(){
+        System.out.println("Playing Music.....")
+    }
 }
 
 
@@ -103,6 +126,7 @@ The methods which are decided on runtime is referred as Dynamic method dispatch
 Abstraction:
 When the concept is not needed to be implemented in base class as children have different behavior
 Instead passed the responsibility to children whatever way they way to implement that functionality
+But children must implement all abstract method or it will give compile time error
 ------------------------------------------------------------------------------------------------------
 
 abstract class Parent{
@@ -127,3 +151,11 @@ class Daughter extends Parent{
 }
 
 ---------------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------------
+
+DSA
+
+arr = [7,2,5,10,8] , m = 2;
